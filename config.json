@@ -1,0 +1,86 @@
+{
+  "bot_settings": {
+    "use_mock_email": true,
+    "use_mock_captcha": true,
+    "enable_human_verification": true,
+    "enable_captcha_solving": true,
+    "enable_phone_verification": true,
+    "max_accounts_per_session": 10,
+    "delay_between_accounts": 5,
+    "timeout_seconds": 30
+  },
+  "email_settings": {
+    "providers": [
+      "temp_mail_org",
+      "guerrilla_mail",
+      "10minutemail"
+    ],
+    "check_interval": 5,
+    "verification_timeout": 120
+  },
+  "captcha_settings": {
+    "method": "ocr",
+    "api_key": "",
+    "retry_attempts": 3,
+    "timeout": 30
+  },
+  "security_settings": {
+    "rotate_user_agent": true,
+    "add_random_delays": true,
+    "simulate_human_behavior": true,
+    "use_proxy": false,
+    "proxy_list": []
+  },
+  "verification_settings": {
+    "phone_verification": {
+      "enabled": true,
+      "country_code": "+1",
+      "fake_sms_code": true
+    },
+    "email_verification": {
+      "enabled": true,
+      "wait_timeout": 60,
+      "auto_click_verification": true
+    },
+    "captcha_verification": {
+      "enabled": true,
+      "methods": ["ocr", "api", "manual"],
+      "preferred_method": "ocr"
+    }
+  },
+  "logging_settings": {
+    "level": "INFO",
+    "file": "logs/advanced_bot.log",
+    "max_file_size": "10MB",
+    "backup_count": 5
+  },
+  "web_interface": {
+    "host": "0.0.0.0",
+    "port": 5000,
+    "debug": false,
+    "secret_key": "your-secret-key-here"
+  },
+  "account_generation": {
+    "username_pattern": "{first_name}{last_name}{random_number}",
+    "password_length": 12,
+    "include_special_chars": true,
+    "name_language": "en"
+  },
+  "advanced_features": {
+    "image_verification": {
+      "enabled": true,
+      "ocr_engine": "tesseract",
+      "preprocessing": true
+    },
+    "audio_verification": {
+      "enabled": true,
+      "speech_recognition": true,
+      "timeout": 10
+    },
+    "proxy_rotation": {
+      "enabled": false,
+      "rotation_interval": 5,
+      "test_proxies": true
+    }
+  }
+}
